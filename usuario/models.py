@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
-class usuarios(models.Model):
+class estudiante(models.Model):
 	nombre = models.CharField(max_length=100,
 								blank=True,
 								null=True,
@@ -19,17 +19,17 @@ class usuarios(models.Model):
 		return self.nombre
 
 	class Meta:
-		ordering = ('nombre',)
+		ordering = ('nombre',) #para ordenar por nombre
+		verbose_name = 'Registro estudiante' #cambia el titulo
 
-
-class TodoArticulo(models.Model):
-	fktodo = models.ForeignKey(usuarios)
-	tarea = models.TextField('Tareas',help_text = 'Descripción de la tarea')
+class Registro_Materia(models.Model):
+	fkmateria = models.ForeignKey(estudiante)
+	materia = models.TextField('Materia',help_text = 'Descripción de la materia')
 	fecha = models.DateField()
 
 	def __str__(self):
-		return u'%s |asignado| %s ' % (self.fktodo, self.tarea)
+		return u'%s |asignado| %s ' % (self.fkmateria, self.materia)
 
 	class Meta:
-		verbose_name=u'Todo Tarea'
-		verbose_name_plural = 'Todo Tareas'
+		verbose_name=u'REgistro Materia'
+		verbose_name_plural = 'Registro Materias'

@@ -1,18 +1,17 @@
 from django.contrib import admin
 
 # Register your models here.
-from models import usuarios, TodoArticulo
+from models import estudiante, Registro_Materia
 
-class AdminUsu(admin.ModelAdmin):
-	list_display = ['__str__','apellidos','edad']
-	class Meta:
-		model = usuarios
+class AdminEstudiantes(admin.TabularInline):
+	model = Registro_Materia
+	extra = 0
 
-class TodoAdmin(admin.ModelAdmin):
+class AdminMaterias(admin.ModelAdmin):
 	list_display = ('nombre',)
-	list_filter = ('nombre',)
+	list_filter = ('apellidos',)
 	search_fields = ['nombre']
-	inlines = [TodoArticulo]
+	inlines = [AdminEstudiantes]
 
-admin.site.register(usuarios,AdminUsu)
-admin.site.register(TodoArticulo)
+admin.site.register(estudiante,AdminMaterias)
+admin.site.register(Registro_Materia)

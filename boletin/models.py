@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-
+#Creando los modelos para la base de datos del registro de docentes
 # Create your models here.
 class Registro_docente(models.Model):
 	nombre = models.CharField(max_length=200,blank=True, null=True)

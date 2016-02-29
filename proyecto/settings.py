@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #Registrando app
+    #Registrando las apps locales
+    'prueba',
     'boletin',
     'usuario',
 ]
