@@ -8,11 +8,11 @@ class estudiante(models.Model):
 	nombre = models.CharField(max_length=100,
 								blank=True,
 								null=True,
-								help_text='Ingrese nombre ')
+								help_text='Ingrese nombre aqui')
 	apellidos = models.CharField(max_length=100,
 								blank=True,
 								null=True,
-								help_text='Ingrese apellido')
+								help_text='Ingrese apellido aqui')
 	edad = models.IntegerField()
 
 	def __str__(self):
