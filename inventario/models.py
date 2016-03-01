@@ -8,14 +8,21 @@ class estudiante(models.Model):
     tarde = 'tar'
     nocturno = 'noc'
     prueba = 'pr'
-    estado_del_dia = (
-        (diurno, 'DIURNO'),
-        (tarde, 'TARDE'),
-        (nocturno, 'NOCTURNO'),
-        (prueba, 'PRUEBA'),
+    MEDIA_CHOICES = (
+    ('Audio', (
+            ('vinyl', 'Vinyl'),
+            ('cd', 'CD'),
+        )
+    ),
+    ('Video', (
+            ('vhs', 'VHS Tape'),
+            ('dvd', 'DVD'),
+        )
+    ),
+    ('unknown', 'Unknown'),
     )
     estado_dia = models.CharField(max_length=20,
-                                      choices=estado_del_dia,
+                                      choices=MEDIA_CHOICES,
                                       default=diurno)
 
     def is_upperclass(self):

@@ -4,7 +4,7 @@ from .models import Prueba
 #registrando los modelos
 
 class mostrar(admin.ModelAdmin):
-	list_display = ['__str__','edad']
+	list_display = ['__str__','edad','usa_linux','archivo']
 	class Meta:
 		model = Prueba
 
