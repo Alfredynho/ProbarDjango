@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'prueba',
     'boletin',
     'usuario',
+    'inventario',
 ]
 
 MIDDLEWARE_CLASSES = [
