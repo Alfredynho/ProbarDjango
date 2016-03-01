@@ -3,20 +3,20 @@ from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
-class Student(models.Model):
-    FRESHMAN = 'FR'
-    SOPHOMORE = 'SO'
-    JUNIOR = 'JR'
-    SENIOR = 'SR'
-    YEAR_IN_SCHOOL_CHOICES = (
-        (FRESHMAN, 'Freshman'),
-        (SOPHOMORE, 'Sophomore'),
-        (JUNIOR, 'Junior'),
-        (SENIOR, 'Senior'),
+class estudiante(models.Model):
+    diurno = 'di'
+    tarde = 'tar'
+    nocturno = 'noc'
+    prueba = 'pr'
+    estado_del_dia = (
+        (diurno, 'DIURNO'),
+        (tarde, 'TARDE'),
+        (nocturno, 'NOCTURNO'),
+        (prueba, 'PRUEBA'),
     )
-    year_in_school = models.CharField(max_length=2,
-                                      choices=YEAR_IN_SCHOOL_CHOICES,
-                                      default=FRESHMAN)
+    estado_dia = models.CharField(max_length=20,
+                                      choices=estado_del_dia,
+                                      default=diurno)
 
     def is_upperclass(self):
-        return self.year_in_school in (self.JUNIOR, self.SENIOR)
+        return self.estado_dia in (self.nocturno, self.prueba)

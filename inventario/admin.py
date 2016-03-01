@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import Student
+from .models import estudiante
 # Register your models here.
 
 class RegStudent(admin.ModelAdmin):
 	list_display = [
-		'year_in_school'
+		'estado_dia'
 	]
 	class Meta:
-		model = Student
+		model = estudiante
 
-admin.site.register(Student,RegStudent)
+admin.site.register(estudiante,RegStudent)
